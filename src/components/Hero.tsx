@@ -2,6 +2,8 @@ import { business } from "@/lib/business";
 import TrustBadges from "@/components/TrustBadges";
 
 export default function Hero() {
+  const heroImage = "heroImage" in business ? business.heroImage : null;
+
   return (
     <section id="hem" className="relative min-h-[85vh] overflow-hidden bg-[var(--dark)] text-white lg:grid lg:grid-cols-[1fr_4px_1fr]">
       <div className="hidden bg-[var(--secondary)] lg:block" aria-hidden />
@@ -18,11 +20,29 @@ export default function Hero() {
           {business.bookingLabel}
         </a>
       </div>
-      <div className="flex items-center justify-center bg-[var(--primary)] p-12">
-        <div className="rotate-3 rounded-sm border-4 border-[var(--secondary)] p-8 shadow-2xl">
-          <span className="text-8xl" aria-hidden>✂️</span>
-          <p className="mt-4 text-center font-[family-name:var(--font-heading)] text-xl uppercase">{business.name}</p>
-        </div>
+      <div className="relative flex min-h-[320px] items-stretch bg-[var(--primary)] lg:min-h-0">
+        {heroImage ? (
+          <>
+            <img
+              src={heroImage}
+              alt={`${business.name} — barberare på ${business.address.street}, ${business.address.city}`}
+              className="absolute inset-0 h-full w-full object-cover"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark)]/90 via-[var(--primary)]/30 to-transparent" aria-hidden />
+            <div className="relative z-10 m-auto rotate-3 rounded-sm border-4 border-[var(--secondary)] bg-[var(--dark)]/60 p-6 shadow-2xl backdrop-blur-sm">
+              <p className="text-center font-[family-name:var(--font-heading)] text-xl uppercase text-[var(--secondary)]">{business.name}</p>
+              <p className="mt-2 text-center text-sm text-white/70">{business.address.street}</p>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-1 items-center justify-center p-12">
+            <div className="rotate-3 rounded-sm border-4 border-[var(--secondary)] p-8 shadow-2xl">
+              <span className="text-8xl" aria-hidden>✂️</span>
+              <p className="mt-4 text-center font-[family-name:var(--font-heading)] text-xl uppercase">{business.name}</p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
