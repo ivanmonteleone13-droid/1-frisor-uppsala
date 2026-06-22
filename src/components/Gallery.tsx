@@ -24,14 +24,14 @@ export default function Gallery() {
   const active = activeIndex !== null ? business.gallery[activeIndex] : null;
 
   return (
-    <section id="galleri" className="bg-[#0f0f1a] py-20 text-white">
+    <section id="galleri" className="bg-[var(--dark)] py-20 text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#c9a227]">
+          <p className="text-sm font-semibold uppercase tracking-wider text-[var(--secondary)]">
             Resultat
           </p>
           <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Före &amp; efter</h2>
-          <p className="mt-4 text-slate-300/80">
+          <p className="mt-4 text-white/80">
             Se transformationer från stolen — klicka på en bild för att förstora.
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function Gallery() {
               key={item.id}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className="group overflow-hidden rounded-2xl border border-white/10 text-left transition hover:border-[#c9a227]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a227]"
+              className="group overflow-hidden rounded-2xl border border-white/10 text-left transition hover:border-[var(--secondary)]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--secondary)]"
             >
               <div className="grid grid-cols-2">
                 <div
@@ -99,10 +99,10 @@ export default function Gallery() {
                 <span className="text-lg font-semibold text-white/90">Efter</span>
               </div>
             </div>
-            <p className="bg-[#1a1a2e] px-6 py-4 text-center text-lg font-semibold">
+            <p className="bg-[var(--primary)] px-6 py-4 text-center text-lg font-semibold">
               {active.label}
             </p>
-            <div className="flex justify-center gap-4 bg-[#1a1a2e] pb-6">
+            <div className="flex justify-center gap-4 bg-[var(--primary)] pb-6">
               <button
                 type="button"
                 disabled={activeIndex === 0}

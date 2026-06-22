@@ -12,12 +12,12 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-[#0f0f1a] text-slate-100">
+    <footer className="mt-auto bg-[var(--dark)] text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
           <p className="text-xl font-bold">{business.name}</p>
-          <p className="mt-2 text-sm text-[#c9a227]">{business.tagline}</p>
-          <p className="mt-4 text-sm leading-relaxed text-slate-300/70">{business.description}</p>
+          <p className="mt-2 text-sm text-[var(--secondary)]">{business.tagline}</p>
+          <p className="mt-4 text-sm leading-relaxed text-white/70">{business.description}</p>
           <div className="mt-4 flex flex-wrap gap-3 text-xs text-slate-400">
             <span>★ {business.rating} Bokadirekt</span>
             <span>·</span>
@@ -28,10 +28,10 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-semibold">Snabblänkar</p>
-          <ul className="mt-4 space-y-2 text-sm text-slate-300/80">
+          <ul className="mt-4 space-y-2 text-sm text-white/80">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-[#c9a227]">
+                <Link href={link.href} className="hover:text-[var(--secondary)]">
                   {link.label}
                 </Link>
               </li>
@@ -40,10 +40,10 @@ export default function Footer() {
         </div>
         <div>
           <p className="font-semibold">Kontakt</p>
-          <address className="mt-4 space-y-2 text-sm not-italic text-slate-300/80">
+          <address className="mt-4 space-y-2 text-sm not-italic text-white/80">
             <p>{getFullAddress()}</p>
             <p>
-              <a href={business.phoneLink} className="hover:text-[#c9a227]">
+              <a href={business.phoneLink} className="hover:text-[var(--secondary)]">
                 {business.phone}
               </a>
             </p>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href={business.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#c9a227]"
+                className="hover:text-[var(--secondary)]"
               >
                 {business.bookingLabel}
               </a>

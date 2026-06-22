@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
+import StatsBar from "@/components/StatsBar";
 import ServicesSection from "@/components/ServicesSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import Gallery from "@/components/Gallery";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import AboutSection from "@/components/AboutSection";
@@ -12,8 +12,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <StatsBar />
       <ServicesSection />
-      <WhyChooseUs />
       <Gallery />
       <ReviewsCarousel />
       <AboutSection />

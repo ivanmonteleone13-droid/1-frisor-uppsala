@@ -15,7 +15,7 @@ export default function TrustBadges() {
           key={badge.label}
           className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur"
         >
-          <span aria-hidden className="text-[#c9a227]">
+          <span aria-hidden className="text-[var(--secondary)]">
             {iconMap[badge.icon] ?? "•"}
           </span>
           {badge.label}

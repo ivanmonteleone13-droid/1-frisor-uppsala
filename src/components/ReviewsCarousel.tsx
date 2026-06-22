@@ -5,7 +5,7 @@ import { business } from "@/lib/business";
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div className="flex gap-0.5 text-[#c9a227]" aria-label={`${rating} av 5 stjärnor`}>
+    <div className="flex gap-0.5 text-[var(--secondary)]" aria-label={`${rating} av 5 stjärnor`}>
       {Array.from({ length: rating }).map((_, i) => (
         <span key={i} aria-hidden>
           ★
@@ -25,10 +25,10 @@ function ReviewCard({
   return (
     <figure className="h-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
       <Stars rating={review.rating} />
-      <blockquote className="mt-4 text-sm leading-relaxed text-slate-100/90">
+      <blockquote className="mt-4 text-sm leading-relaxed text-white/90">
         &ldquo;{review.text}&rdquo;
       </blockquote>
-      <figcaption className="mt-4 text-xs text-slate-300/60">
+      <figcaption className="mt-4 text-xs text-white/60">
         — {review.author} · {review.source}
       </figcaption>
     </figure>
@@ -47,18 +47,18 @@ export default function ReviewsCarousel() {
   }, [total]);
 
   return (
-    <section id="omdomen" className="bg-[#1a1a2e] py-20 text-white">
+    <section id="omdomen" className="bg-[var(--primary)] py-20 text-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#c9a227]">
+          <p className="text-sm font-semibold uppercase tracking-wider text-[var(--secondary)]">
             Omdömen
           </p>
           <h2 className="mt-2 text-3xl font-bold sm:text-4xl">Vad våra kunder säger</h2>
-          <p className="mt-4 text-slate-300/80">
+          <p className="mt-4 text-white/80">
             {business.rating}/5 baserat på {business.reviewCount}+ recensioner — utdrag
             parafraserade från Bokadirekt.
           </p>
-          <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#c9a227]/20 px-4 py-2 text-sm font-semibold text-[#c9a227]">
+          <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[var(--secondary)]/20 px-4 py-2 text-sm font-semibold text-[var(--secondary)]">
             <span aria-hidden>★</span>
             Verifierade kundomdömen
           </div>
@@ -95,7 +95,7 @@ export default function ReviewsCarousel() {
                   role="tab"
                   aria-selected={i === current}
                   onClick={() => setCurrent(i)}
-                  className={`h-2 w-2 rounded-full transition ${i === current ? "bg-[#c9a227] w-6" : "bg-white/30"}`}
+                  className={`h-2 w-2 rounded-full transition ${i === current ? "bg-[var(--secondary)] w-6" : "bg-white/30"}`}
                   aria-label={`Omdöme ${i + 1}`}
                 />
               ))}
@@ -123,7 +123,7 @@ export default function ReviewsCarousel() {
             href={business.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-[#c9a227] px-8 py-3 text-sm font-semibold text-[#0f0f1a] transition hover:bg-[#b8921f]"
+            className="inline-flex items-center justify-center rounded-full bg-[var(--secondary)] px-8 py-3 text-sm font-semibold text-[var(--dark)] transition hover:bg-[var(--secondary)]"
           >
             Bli nästa nöjda kund — boka tid
           </a>

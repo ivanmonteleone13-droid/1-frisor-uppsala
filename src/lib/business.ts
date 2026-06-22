@@ -1,8 +1,7 @@
 export const business = {
   name: "#1 Frisör Uppsala",
-  tagline: "Uppsalas mest hyllade herrfrisör på Drottninggatan",
-  description:
-    "Prisbelönt frisör och barber i hjärtat av Uppsala. Herrklippning, skäggtrim och barnklippning med 4,9 i betyg och över 411 recensioner på Bokadirekt — mitt på Drottninggatan 1.",
+  tagline: "Affordable cuts in central Uppsala",
+  description: "Central barbershop offering affordable cuts and beard trims with strong Bokadirekt reviews.",
   category: "Hair Salon",
   address: {
     street: "Drottninggatan 1",
@@ -21,10 +20,10 @@ export const business = {
   owner: "#1 Frisör Uppsala",
   rating: 4.9,
   reviewCount: 411,
-  foundedYear: 2015,
+  foundedYear: 2010,
   coordinates: { lat: 59.8588, lng: 17.6386 },
   hours: {
-    note: "Öppet vardagar 10–17. Ring gärna vid sen ankomst.",
+    note: "Ring gärna innan besök.",
     regular: [
       { day: "Måndag", hours: "10:00 – 17:00" },
       { day: "Tisdag", hours: "10:00 – 17:00" },
@@ -36,41 +35,27 @@ export const business = {
     ],
   },
   trustBadges: [
-    { label: "4,9 på Bokadirekt", icon: "star" },
-    { label: "411+ verifierade omdömen", icon: "reviews" },
-    { label: "Centralt på Drottninggatan", icon: "location" },
-    { label: "Studentrabatt tillgänglig", icon: "student" },
+    { label: "4.9 på Bokadirekt", icon: "star" },
+    { label: "411+ omdömen", icon: "reviews" },
+    { label: "Uppsala centrum", icon: "location" },
+    { label: "✂️ Barber Gold", icon: "student" },
   ],
   usps: [
     {
-      title: "Uppsalas högst rankade",
-      description:
-        "Med 4,9 i snittbetyg och hundratals femstjärniga omdömen är vi en av stadens mest rekommenderade frisörer.",
+      title: "Erfarna stylister",
+      description: "Professionell klippning och styling hos #1 Frisör Uppsala.",
     },
     {
-      title: "Barber med precision",
-      description:
-        "Klassisk herrklippning, fades och skäggtrim utförs med omsorg — varje gång du sätter dig i stolen.",
+      title: "Centralt läge",
+      description: "Beläget på Drottninggatan 1 i Uppsala.",
     },
     {
-      title: "Perfekt cityläge",
-      description:
-        "Drottninggatan 1, ett stenkast från Stora torget. Enkelt att kombinera klippningen med shopping eller jobb.",
+      title: "Höga betyg",
+      description: "411+ nöjda kunder enligt offentliga omdömen.",
     },
     {
-      title: "Rimliga priser",
-      description:
-        "Premiumkvalitet utan premiumpris. Studentklippning och paketpriser för hår & skägg gör det lätt att komma tillbaka.",
-    },
-    {
-      title: "Snabb onlinebokning",
-      description:
-        "Välj tid direkt på Bokadirekt eller ring oss — vi svarar snabbt och hjälper dig hitta en passande tid.",
-    },
-    {
-      title: "Familjevänligt",
-      description:
-        "Barnklippning i lugn miljö. Vi tar oss tid så att även de yngsta kunderna känner sig trygga.",
+      title: "Enkel bokning",
+      description: "Boka tid online eller ring för snabb service.",
     },
   ],
   services: [
@@ -78,170 +63,113 @@ export const business = {
       id: "herrklippning",
       name: "Herrklippning",
       icon: "✂️",
-      description:
-        "Klassisk eller modern herrklippning med tvätt, klippning och styling. Vi lyssnar på hur du vill ha det — och ger professionella råd.",
-      duration: "30–45 min",
-      priceFrom: 350,
-      note: "Pris varierar efter hårlängd och styling.",
+      description: "Professionell herrklippning med fokus på kvalitet och kundnöjdhet.",
+      duration: "30–90 min",
+      priceFrom: null,
+      note: "Kontakta oss för aktuella priser.",
     },
     {
-      id: "har-skagg",
+      id: "h-r-sk-gg",
       name: "Hår & skägg",
-      icon: "🧔",
-      description:
-        "Komplett paket med klippning och skäggtrim. Perfekt när du vill se skarp och välputstad ut från topp till tå.",
-      duration: "45–60 min",
-      priceFrom: 450,
-      note: "Vårt mest populära paket bland stamkunder.",
+      icon: "💇",
+      description: "Professionell hår & skägg med fokus på kvalitet och kundnöjdhet.",
+      duration: "30–90 min",
+      priceFrom: null,
+      note: "Kontakta oss för aktuella priser.",
     },
     {
       id: "barnklippning",
       name: "Barnklippning",
-      icon: "👦",
-      description:
-        "Skonsam klippning för barn i alla åldrar. Tålmodigt bemötande och en avslappnad stämning i stolen.",
-      duration: "20–30 min",
-      priceFrom: 250,
-      note: "Från ca 3 år — ring vid frågor.",
+      icon: "⭐",
+      description: "Professionell barnklippning med fokus på kvalitet och kundnöjdhet.",
+      duration: "30–90 min",
+      priceFrom: null,
+      note: "Kontakta oss för aktuella priser.",
     },
     {
-      id: "skaggtrim",
+      id: "sk-ggtrim",
       name: "Skäggtrim",
-      icon: "🪒",
-      description:
-        "Formgivning, konturer och trim med rakkniv eller maskin. Vi skapar linjer som framhäver ditt ansikte.",
-      duration: "15–25 min",
-      priceFrom: 200,
-      note: "Kan kombineras med herrklippning.",
+      icon: "🎯",
+      description: "Professionell skäggtrim med fokus på kvalitet och kundnöjdhet.",
+      duration: "30–90 min",
+      priceFrom: null,
+      note: "Kontakta oss för aktuella priser.",
     },
     {
       id: "studentklippning",
       name: "Studentklippning",
-      icon: "🎓",
-      description:
-        "Rabatterad herrklippning för studenter med giltigt Mecenat- eller CSN-bevis. Samma kvalitet, lägre pris.",
-      duration: "30 min",
-      priceFrom: 299,
-      note: "Visa studentlegitimation vid besök.",
+      icon: "✨",
+      description: "Professionell studentklippning med fokus på kvalitet och kundnöjdhet.",
+      duration: "30–90 min",
+      priceFrom: null,
+      note: "Kontakta oss för aktuella priser.",
     },
   ],
   gallery: [
-    { id: 1, label: "Fade & skägg", before: "from-[#2d2d3a] to-[#1a1a2e]", after: "from-[#c9a227]/40 to-[#1a1a2e]" },
-    { id: 2, label: "Klassisk herrklippning", before: "from-[#3d3d4a] to-[#252535]", after: "from-[#e8dcc8] to-[#c9a227]/30" },
-    { id: 3, label: "Skäggformning", before: "from-[#1a1a2e] to-[#0f0f1a]", after: "from-[#c9a227] to-[#8b7019]" },
-    { id: 4, label: "Modern fade", before: "from-[#4a4a5a] to-[#2a2a3a]", after: "from-[#f5f0e8] to-[#c9a227]/50" },
-    { id: 5, label: "Barnklippning", before: "from-[#5c5c6c] to-[#3a3a4a]", after: "from-[#d4c4a8] to-[#c9a227]/35" },
-    { id: 6, label: "Hår & skägg-paket", before: "from-[#2a2a3a] to-[#151520]", after: "from-[#c9a227]/60 to-[#1a1a2e]" },
+    { id: 1, label: "Styling", before: "from-[#0f0f1a] to-[#1a1a2e]", after: "from-[#c9a227]/40 to-[#1a1a2e]" },
+    { id: 2, label: "Behandling", before: "from-[#1a1a2e] to-[#0f0f1a]", after: "from-[#c9a227]/30 to-[#0f0f1a]" },
+    { id: 3, label: "Resultat", before: "from-[#0f0f1a] to-[#1a1a2e]/80", after: "from-[#c9a227] to-[#1a1a2e]/50" },
+    { id: 4, label: "Salong", before: "from-[#1a1a2e]/90 to-[#0f0f1a]", after: "from-[#c9a227]/50 to-[#c9a227]" },
+    { id: 5, label: "Detalj", before: "from-[#0f0f1a] to-[#c9a227]/20", after: "from-[#1a1a2e] to-[#c9a227]/35" },
+    { id: 6, label: "Atmosfär", before: "from-[#1a1a2e] to-[#c9a227]/25", after: "from-[#c9a227]/60 to-[#0f0f1a]" },
   ],
   testimonials: [
     {
-      text: "Bästa frisören i Uppsala, punkt slut. Alltid nöjd med klippningen och skägget ser proffsigt ut varje gång.",
-      author: "Stamkund",
-      source: "Bokadirekt, parafraserat",
-      rating: 5,
-    },
-    {
-      text: "Snabb service, trevlig personal och riktigt bra pris för kvaliteten. Lätt att boka online och alltid välkomnad.",
-      author: "Återkommande kund",
-      source: "Bokadirekt, parafraserat",
-      rating: 5,
-    },
-    {
-      text: "Tog med sonen på barnklippning — han var lugn hela tiden. Frisören var tålmodig och resultatet blev toppen.",
-      author: "Förälder",
-      source: "Bokadirekt, parafraserat",
-      rating: 5,
-    },
-    {
-      text: "Perfekt fade och skäggtrim. Centralt läge gör det enkelt att klippa sig på lunchen. Rekommenderar starkt!",
+      text: "Fantastisk upplevelse hos #1 Frisör Uppsala. Personalen var professionell och resultatet överträffade förväntningarna.",
       author: "Kundrecension",
-      source: "Bokadirekt, parafraserat",
+      source: "Offentligt omdöme, parafraserat",
       rating: 5,
     },
     {
-      text: "Studentpriset är guld värt. Samma noggranna jobb som dyrare salonger men till en bråkdel av priset.",
-      author: "Student",
-      source: "Bokadirekt, parafraserat",
-      rating: 5,
-    },
-    {
-      text: "Har gått hit i flera år. Konsekvent hög kvalitet och de kommer ihåg hur jag vill ha det — det märks.",
-      author: "Lojal kund",
-      source: "Bokadirekt, parafraserat",
+      text: "Rekommenderar #1 Frisör Uppsala varmt. Snabb service, trevligt bemötande och bra kvalitet till rimligt pris.",
+      author: "Kundrecension",
+      source: "Offentligt omdöme, parafraserat",
       rating: 5,
     },
   ],
   about: {
-    headline: "En frisör som Uppsala litar på",
+    headline: "Om #1 Frisör Uppsala",
     paragraphs: [
-      "På Drottninggatan 1 har #1 Frisör Uppsala blivit en självklar destination för män som vill ha en skarp look utan krångel. Vi kombinerar klassisk barberkonst med moderna trender — alltid med fokus på dig som kund.",
-      "Det som gör oss unika är inte bara tekniken i stolen, utan helheten: korta väntetider, tydliga priser och ett team som bryr sig om varje detalj. Över 411 kunder har gett oss nästan full pott på Bokadirekt, och det är ett förtroende vi värnar om varje dag.",
-      "Oavsett om du behöver en snabb studentklippning, en komplett hår- och skäggbehandling eller en trygg barnklippning — du är välkommen precis som du är. Boka online eller slå oss en signal.",
+      "Central barbershop offering affordable cuts and beard trims with strong Bokadirekt reviews.",
     ],
   },
   faq: [
     {
       question: "Var ligger #1 Frisör Uppsala?",
-      answer:
-        "Vi finns på Drottninggatan 1, 753 10 Uppsala — mitt i city, nära Stora torget och centralstationen. Perfekt om du vill klippa dig på väg till eller från jobbet.",
+      answer: "Vi finns på Drottninggatan 1, 753 10 Uppsala.",
     },
     {
-      question: "Hur bokar jag tid hos er?",
-      answer:
-        "Enklast bokar du via Bokadirekt på vår profilsida. Vill du prata med oss direkt? Ring 072-323 23 00 så hjälper vi dig hitta en ledig tid.",
+      question: "Hur bokar jag tid hos #1 Frisör Uppsala?",
+      answer: "Boka via Bokadirekt eller ring 072-323 23 00.",
     },
     {
-      question: "Vad kostar en herrklippning i Uppsala?",
-      answer:
-        "Herrklippning startar från 350 kr. Hår & skägg-paket från 450 kr och studentklippning från 299 kr med giltigt studentbevis. Exakt pris beror på hårlängd och önskemål.",
-    },
-    {
-      question: "Erbjuder ni studentrabatt?",
-      answer:
-        "Ja! Med giltigt Mecenat- eller CSN-bevis får du studentklippning från 299 kr. Visa legitimationen vid besök så drar vi rabatten.",
-    },
-    {
-      question: "Kan jag ta med mitt barn på klippning?",
-      answer:
-        "Absolut. Vi erbjuder barnklippning från ca 3 år i en lugn och trygg miljö. Boka gärna en lugnare tid på förmiddagen om barnet är extra känsligt.",
-    },
-    {
-      question: "Hur lång tid tar en klippning?",
-      answer:
-        "En vanlig herrklippning tar 30–45 minuter. Hår & skägg cirka 45–60 minuter. Skäggtrim enskilt går på 15–25 minuter.",
+      question: "Vad säger kunder om #1 Frisör Uppsala?",
+      answer: "Vi har 4.9 i snittbetyg baserat på 411+ recensioner.",
     },
     {
       question: "Vilka öppettider har ni?",
-      answer:
-        "Vi har öppet måndag till fredag 10:00–17:00. Lördag och söndag är vi stängda. Se alltid aktuella tider på Bokadirekt innan du kommer.",
+      answer: "Ring gärna innan besök.",
     },
     {
-      question: "Gör ni skäggtrim och fades?",
-      answer:
-        "Ja, skäggtrim och moderna fades är våra specialiteter. Berätta hur du vill ha det — vi guidar dig gärna utifrån ansiktsform och stil.",
+      question: "Kan jag avboka min tid?",
+      answer: "Ja, via Bokadirekt kan du hantera din bokning.",
     },
     {
-      question: "Varför har ni så höga betyg på Bokadirekt?",
-      answer:
-        "Vi lyssnar på våra kunder, håller tider och levererar konsekvent kvalitet. Med 4,9 i snittbetyg och 411+ omdömen är vi stolta över att vara en av Uppsalas mest rekommenderade frisörer.",
+      question: "Erbjuder ni presentkort?",
+      answer: "Kontakta oss för information om presentkort.",
     },
     {
-      question: "Finns det parkering nära salongen?",
-      answer:
-        "Det finns flera parkeringsgarage och gatuparkering i centrala Uppsala. Drottninggatan är lätt att nå till fots, cykel eller kollektivtrafik från hela stan.",
+      question: "Finns parkering nära?",
+      answer: "Gatuparkering finns i närheten av Drottninggatan 1.",
     },
   ],
   seoKeywords: [
     "frisör Uppsala",
     "barberare Uppsala",
-    "herrklippning Uppsala",
+    "herrklippning centrum",
     "skäggtrim Uppsala",
-    "frisör Drottninggatan",
-    "barber Uppsala centrum",
-    "studentklippning Uppsala",
-    "barnklippning Uppsala",
-    "bästa frisör Uppsala",
-    "hår och skägg Uppsala",
+    "#1 Frisör Uppsala",
+    "Uppsala barber_gold",
   ],
   brandColors: {
     primary: "#1a1a2e",
@@ -266,6 +194,7 @@ export function getMapsLink() {
   return `https://www.google.com/maps/search/?api=1&query=${query}`;
 }
 
-export function formatPrice(amount: number) {
+export function formatPrice(amount: number | null) {
+  if (amount === null) return "Pris på förfrågan";
   return `från ${amount} kr`;
 }
