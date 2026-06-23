@@ -1,48 +1,82 @@
 import { business } from "@/lib/business";
 import TrustBadges from "@/components/TrustBadges";
 
+function lowestPrice(): number | null {
+  const prices: number[] = [];
+  for (const s of business.services) {
+    const p = s.priceFrom;
+    if (typeof p === "number" && p > 0) prices.push(p);
+  }
+  return prices.length ? Math.min(...prices) : null;
+}
+
 export default function Hero() {
   const heroImage = "heroImage" in business ? business.heroImage : null;
+  const logoImage = "logoImage" in business ? business.logoImage : null;
+  const fromPrice = lowestPrice();
 
   return (
-    <section id="hem" className="relative min-h-[85vh] overflow-hidden bg-[var(--dark)] text-white lg:grid lg:grid-cols-[1fr_4px_1fr]">
-      <div className="hidden bg-[var(--secondary)] lg:block" aria-hidden />
-      <div className="flex flex-col justify-center px-8 py-20 lg:px-16">
-        <p className="font-[family-name:var(--font-heading)] text-sm uppercase tracking-[0.5em] text-[var(--secondary)]">Barbershop</p>
-        <h1 className="mt-4 font-[family-name:var(--font-heading)] text-5xl font-bold uppercase leading-none sm:text-7xl">
-          Uppsalas mest
-        </h1>
-        <h2 className="mt-2 font-[family-name:var(--font-heading)] text-3xl text-[var(--secondary)] sm:text-4xl">hyllade barber</h2>
-        <p className="mt-8 max-w-md text-white/80">{business.description}</p>
-        <TrustBadges />
-        <a href={business.bookingUrl} target="_blank" rel="noopener noreferrer"
-          className="mt-10 inline-flex w-fit border-2 border-[var(--secondary)] px-10 py-4 font-[family-name:var(--font-heading)] text-lg uppercase tracking-wider text-[var(--secondary)] transition hover:bg-[var(--secondary)] hover:text-[var(--dark)]">
-          {business.bookingLabel}
-        </a>
-      </div>
-      <div className="relative flex min-h-[320px] items-stretch bg-[var(--primary)] lg:min-h-0">
-        {heroImage ? (
-          <>
+    <section id="hem" className="relative min-h-[88vh] overflow-hidden bg-[var(--dark)] text-white">
+      {heroImage && (
+        <>
+          <img
+            src={heroImage}
+            alt={`${business.name} — barbershop på ${business.address.street}, ${business.address.city}`}
+            className="absolute inset-0 h-full w-full object-cover"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--dark)]/95 via-[var(--dark)]/75 to-[var(--dark)]/40" aria-hidden />
+        </>
+      )}
+      <div className="relative mx-auto flex max-w-6xl flex-col justify-center px-4 py-20 sm:px-6 lg:min-h-[88vh] lg:py-28">
+        <div className="max-w-2xl">
+          {logoImage ? (
             <img
-              src={heroImage}
-              alt={`${business.name} — barberare på ${business.address.street}, ${business.address.city}`}
-              className="absolute inset-0 h-full w-full object-cover"
-              fetchPriority="high"
+              src={logoImage}
+              alt=""
+              className="mb-6 h-16 w-16 rounded-full border-2 border-[var(--secondary)] bg-white object-contain p-1 shadow-lg"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark)]/90 via-[var(--primary)]/30 to-transparent" aria-hidden />
-            <div className="relative z-10 m-auto rotate-3 rounded-sm border-4 border-[var(--secondary)] bg-[var(--dark)]/60 p-6 shadow-2xl backdrop-blur-sm">
-              <p className="text-center font-[family-name:var(--font-heading)] text-xl uppercase text-[var(--secondary)]">{business.name}</p>
-              <p className="mt-2 text-center text-sm text-white/70">{business.address.street}</p>
+          ) : null}
+          <p className="font-[family-name:var(--font-heading)] text-sm uppercase tracking-[0.4em] text-[var(--secondary)]">
+            Barbershop · Drottninggatan
+          </p>
+          <h1 className="mt-4 font-[family-name:var(--font-heading)] text-4xl font-bold uppercase leading-tight sm:text-6xl">
+            Uppsalas mest hyllade barber
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
+            Prisvärd herrklippning, skägg och styling mitt i city. Boka online eller kom förbi — Omar och teamet väntar på dig.
+          </p>
+          {fromPrice ? (
+            <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-[var(--secondary)]/40 bg-[var(--secondary)]/10 px-5 py-2.5 text-sm font-semibold text-[var(--secondary)] backdrop-blur-sm">
+              <span aria-hidden>✂️</span>
+              Klippning från {fromPrice} kr · Student från 300 kr
             </div>
-          </>
-        ) : (
-          <div className="flex flex-1 items-center justify-center p-12">
-            <div className="rotate-3 rounded-sm border-4 border-[var(--secondary)] p-8 shadow-2xl">
-              <span className="text-8xl" aria-hidden>✂️</span>
-              <p className="mt-4 text-center font-[family-name:var(--font-heading)] text-xl uppercase">{business.name}</p>
-            </div>
+          ) : null}
+          <TrustBadges />
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={business.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--secondary)] px-8 py-4 font-[family-name:var(--font-heading)] text-sm font-semibold uppercase tracking-wider text-[var(--dark)] transition hover:opacity-90"
+            >
+              {business.bookingLabel}
+            </a>
+            <a
+              href={business.phoneLink}
+              className="inline-flex items-center justify-center rounded-full border-2 border-white/30 px-8 py-4 font-[family-name:var(--font-heading)] text-sm font-semibold uppercase tracking-wider text-white transition hover:bg-white/10"
+            >
+              Ring {business.phone}
+            </a>
           </div>
-        )}
+        </div>
+        <div className="mt-12 hidden lg:absolute lg:right-8 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2">
+          <div className="rounded-2xl border border-[var(--secondary)]/30 bg-[var(--dark)]/80 p-6 text-center shadow-2xl backdrop-blur-md">
+            <p className="text-4xl font-bold text-[var(--secondary)]">{business.rating}</p>
+            <p className="mt-1 text-sm text-white/70">{business.reviewCount}+ omdömen på Bokadirekt</p>
+            <p className="mt-3 text-xs uppercase tracking-wider text-white/50">{business.address.street}</p>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -16,6 +16,7 @@ export const business = {
   bookingUrl: "https://www.bokadirekt.se/places/1-frisor-uppsala-50655",
   bookingLabel: "Boka på Bokadirekt",
   websiteUrl: "https://1frisoruppsala.se/" as string | null,
+  logoImage: "/images/logo.jpg" as string | null,
   heroImage: "/images/hero.jpg",
   aboutImage: "/images/gallery-1.jpg",
   facebookUrl: "https://www.facebook.com/1-Fris%C3%B6r-Uppsala-100100118595309/" as string | null,
@@ -68,7 +69,7 @@ export const business = {
       icon: "✂️",
       description: "Professionell herrklippning med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 350,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -77,7 +78,7 @@ export const business = {
       icon: "💇",
       description: "Professionell hår & skägg med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 450,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -86,7 +87,7 @@ export const business = {
       icon: "⭐",
       description: "Professionell barnklippning med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 300,
       note: "Kontakta oss för aktuella priser.",
     },
     {
@@ -95,7 +96,7 @@ export const business = {
       icon: "🎯",
       description: "Professionell skäggtrim med fokus på kvalitet och kundnöjdhet.",
       duration: "30–90 min",
-      priceFrom: null,
+      priceFrom: 150,
       note: "Kontakta oss för aktuella priser.",
     },
     {
